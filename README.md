@@ -13,11 +13,12 @@ The app is a working progress.
  - Forms maniputation
     - Template Driven forms
     - Reactive forms
+ - Http Request Handling
     
 # Ongoing upgrades
- - Managing http reqest
- - Connecting to firebase for storage and authentication
+ - authentication
  - Protecting routes with Guards
+ - Saving data to the firebase(shopping list)
  
 # Next upgrades
  - Building dynamic components
