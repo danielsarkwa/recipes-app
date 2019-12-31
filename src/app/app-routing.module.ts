@@ -11,10 +11,11 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { AuthComponent } from './auth/auth.component';
 
 import { RecipesResolverService } from './recipes/recipes-resolver.service';
+import { AuthGuardService } from './auth/auth-guard.service';
 
 const AppRoutes: Routes = [
   { path: '', redirectTo: '/recipes', pathMatch: 'full'},
-  { path: 'recipes', component: RecipesComponent, children: [
+  { path: 'recipes', component: RecipesComponent, canActivate: [AuthGuardService], children: [
     { path: '', component: RecipeStartComponent },
     { path: 'new', component: RecipeEditComponent },
     { path: ':id', component: RecipeDetailComponent, resolve: [RecipesResolverService] },
