@@ -14,15 +14,16 @@ The app is a working progress.
     - Template Driven forms
     - Reactive forms
  - Http Request Handling
+ - Saving recipes to database
+ - User authentication
+ - Protecting routes with Guards
     
 # Ongoing upgrades
- - authentication
- - Protecting routes with Guards
  - Saving data to the firebase(shopping list)
+ - Modulization of features
  
 # Next upgrades
  - Building dynamic components
- - Modulization of features
  - Deploying the app to a server
  
 # Other upgrades
@@ -31,3 +32,31 @@ The app is a working progress.
  - Adding animation to the application
  - Adding offline capabilities to the application
  - Writing unit test for the app
+ - Updating the UI with ant-design for angular
+
+## Run app
+ - clone the app
+ - cd into <app dir>
+ - run "npm install"
+ - run "npm start" and wait for the cli to open your default browser on localhost:5000
+ - to use authentication (if new to firebase, else continue below)
+    ###### Sign up firebase
+     - (sign up to firebase)[https://firebase.google.com/]
+     - after sign up, go to console
+     - add a new project
+
+    ###### Set up runtime datebase
+     - in the console, click on runtime database as the database
+     - on the navbar, click on rules and add "auth != null" property to the read and write keys of the rule object and publish the changes.
+
+    ###### Set up authentication the project
+     - on the sidebar, click on on "authentication"
+     - enable method for authentication.(recommend using email and pasword)
+     - make using it is set to on user on email and pasword.(can ignore since it is default)
+    
+    ###### copy your [API KEY]
+     - On the sidebar, click on "settings icon"
+     - On the popup, select "prpject settings", will see the web API kEY below the first card
+
+  - Adding API KEY to connect to datbase
+     - In the "src/auth/auth.service.ts", replace "[API_KEY]" with your API KEY from firebase.
