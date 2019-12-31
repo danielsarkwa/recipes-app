@@ -41,7 +41,7 @@ The app is a working progress.
  - run "npm start" and wait for the cli to open your default browser on localhost:5000
  - to use authentication (if new to firebase, else continue below)
     ###### Sign up firebase
-     - (sign up to firebase)[https://firebase.google.com/]
+     - [sign up to firebase](https://firebase.google.com/)
      - after sign up, go to console
      - add a new project
 
