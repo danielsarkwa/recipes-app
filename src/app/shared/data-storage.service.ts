@@ -16,12 +16,12 @@ export class DataStorageService {
 
   storeRecipes() {
     const recipes = this.recipeService.getRecipes();
-    return this.http.put('https://recipes-app-1540b.firebaseio.com/recipes.json', recipes);
+    return this.http.put('PROJECT URL/recipes.json', recipes);
   }
 
   fetchRecipes() {
     return this.http.get<Recipe[]>(
-      'https://recipes-app-1540b.firebaseio.com/recipes.json',
+      'PROJECT URL/recipes.json',
      ).pipe(
       map(recipeItem => {
         return recipeItem.map(recipeDetails => {
