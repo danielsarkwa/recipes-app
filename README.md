@@ -60,3 +60,6 @@ The app is a working progress.
 
   - Adding API KEY to connect to datbase
      - In the "src/auth/auth.service.ts", replace "[API_KEY]" with your API KEY from firebase.
+
+  - Adding database user to connect to datbase and save
+     - In the "src/shared/data-storage.service.ts", replace "PROJECT URL" with your database url from firebase.(remember to keep the /reciepes.json, this is the file firebase writes to)
