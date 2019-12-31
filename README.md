@@ -36,7 +36,7 @@ The app is a working progress.
 
 ## Run app
  - clone the app
- - cd into <app dir>
+ - cd into "app dir"
  - run "npm install"
  - run "npm start" and wait for the cli to open your default browser on localhost:5000
  - to use authentication (if new to firebase, else continue below)
