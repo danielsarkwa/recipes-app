@@ -17,6 +17,7 @@ The app is a working progress.
  - Saving recipes to database
  - User authentication
  - Protecting routes with Guards
+ - Dynamic component
     
 # Ongoing upgrades
  - Saving data to the firebase(shopping list)
