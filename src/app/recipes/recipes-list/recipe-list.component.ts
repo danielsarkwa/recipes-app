@@ -35,6 +35,3 @@ export class RecipeListComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 }
-/**
- * this is the component that list out the recipes using the recipe-item component
- */
