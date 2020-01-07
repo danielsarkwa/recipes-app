@@ -18,17 +18,16 @@ The app is a working progress.
  - User authentication
  - Protecting routes with Guards
  - Dynamic component
+ - Building dynamic components
+ - Deploying the app to a server
+ - Modulization of app
+ - Using NgRx
     
 # Ongoing upgrades
  - Saving data to the firebase(shopping list)
- - Modulization of features
- 
-# Next upgrades
- - Building dynamic components
- - Deploying the app to a server
- 
+ - Using NgRx (check "using-ngrx" branch)
+
 # Other upgrades
- - Using NgRx
  - Using Angular univarsal
  - Adding animation to the application
  - Adding offline capabilities to the application
