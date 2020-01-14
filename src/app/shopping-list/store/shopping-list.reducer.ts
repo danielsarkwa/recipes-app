@@ -1,10 +1,6 @@
 import { Ingredient } from '../../shared/ingredient.model';
 import * as shoppingListActions from './shopping-list.actions';
 
-export interface AppState {
-  shoppingList: State;
-}
-
 export interface State {
   ingredients: Ingredient[];
   editedIngredient: Ingredient;
@@ -35,7 +31,7 @@ export function shoppingListReducer(
           ingredients: [...state.ingredients, ...action.payload]
         };
 
-      case shoppingListActions.UPDATE_INGREDIENT:
+      case shoppingListActions.UPDATE_INGREDIENT: // have a problem with the case in ui
         const ingredient = state.ingredients[state.editedIngredientIndex];
         const updatedIngredient = {
           ...ingredient,
@@ -61,7 +57,8 @@ export function shoppingListReducer(
       case shoppingListActions.START_EDIT:
         return {
           ...state,
-          editedIngredient: { ...state.ingredients[action.payload] }
+          editedIngredient: { ...state.ingredients[action.payload] },
+          editedIngredientIndex: action.payload
         };
       case shoppingListActions.STOP_EDIT:
         return {
