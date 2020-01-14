@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { map, switchMap } from 'rxjs/operators';
+import { Store } from '@ngrx/store';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 
 import { Recipe } from '../recipe.model';
 import { RecipeService } from '../recipe.service';
+
+import * as fromApp from '../../store/app.reducer';
 
 @Component({
   selector: 'app-recipe-detail',
@@ -16,16 +20,29 @@ export class RecipeDetailComponent implements OnInit {
 
   constructor(private recipeService: RecipeService,
               private router: Router,
-              private route: ActivatedRoute) { }
+              private route: ActivatedRoute,
+              private store: Store<fromApp.AppState>) { }
 
   ngOnInit() {
     this.route.params
-      .subscribe(
-        (params: Params) => {
-          this.id = +params.id;
-          this.recipe = this.recipeService.getRecipe(this.id);
-        }
-      );
+      .pipe(
+        map(params => {
+          return +params['id']
+        }),
+        switchMap(id => {
+          this.id = id;
+          return this.store.select('recipes');
+        }),
+        map(recipesState => {
+          return recipesState.recipes.find((
+            recipe, index) => {
+              return index === this.id;
+          });
+        })
+      )
+      .subscribe((recipe: Recipe) => {
+        this.recipe = recipe;
+      });
   }
 
   onAddToShoppingList() {
@@ -41,7 +58,3 @@ export class RecipeDetailComponent implements OnInit {
     this.router.navigate(['/recipes']);
   }
 }
-/**
- * this is the component that displays a recipe detail when selected to the from the recipe list
- *   -- the recipe list sends the index in the req and then it gets the recipe from the service
- */
