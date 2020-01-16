@@ -3,11 +3,11 @@ import { Store } from '@ngrx/store';
 import { map } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
 
-import { DataStorageService } from '../shared/data-storage.service';
 import { AuthService } from '../auth/auth.service';
 
 import * as fromApp from '../store/app.reducer';
 import * as AuthActions from '../auth/store/auth.actions';
+import * as RecipesActions from '../recipes/store/recipes.actions';
 
 @Component({
   selector: 'app-header',
@@ -21,26 +21,20 @@ export class HeaderComponent implements OnInit, OnDestroy {
   saveBtnTxt = 'Save Recipes';
   fetchBtnTxt = 'Fetch Recipes';
 
-  constructor(private dataStorageService: DataStorageService,
-              private authService: AuthService,
+  constructor(private authService: AuthService,
               private store: Store<fromApp.AppState>) {}
 
   onSaveData() {
     this.saveBtnTxt = 'Loading...';
-    this.dataStorageService.storeRecipes().subscribe(
-      response => {
-        this.saveBtnTxt = 'Save Recipes';
-        window.alert('recipes saved');
-    });
+    this.store.dispatch(new RecipesActions.StoreRecipes());
+    this.saveBtnTxt = 'Save Recipes';
+    window.alert('recipes saved');
   }
 
   onFetchData() {
     this.fetchBtnTxt = 'Loading...';
-    this.dataStorageService.fetchRecipes().subscribe(
-      data => {
-        this.fetchBtnTxt = 'Fetch Recipes';
-      }
-    );
+    this.store.dispatch(new RecipesActions.FetchRecipes());
+    this.fetchBtnTxt = 'Fetch Recipes';
   }
 
   onLogOut() {

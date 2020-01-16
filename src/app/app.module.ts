@@ -19,6 +19,7 @@ import { HeaderComponent } from './header/header.component';
 import * as fromApp from './store/app.reducer';
 
 import { AuthEffects } from './auth/store/auth.effects';
+import { RecipesEffects } from './recipes/store/recipes.effect';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { AuthEffects } from './auth/store/auth.effects';
     ReactiveFormsModule,
     HttpClientModule,
     StoreModule.forRoot(fromApp.appReducer),
-    EffectsModule.forRoot([AuthEffects]),
+    EffectsModule.forRoot([AuthEffects, RecipesEffects]),
     ShoppingListModule,
     SharedModule,
     CoreModule,
