@@ -1,7 +1,5 @@
 # recipes-app
-This app is focused on the architecture of angular and the user flow and not the ui design.
-
-The app is a working progress.
+This app is focused on the architecture of angular using ng-rx and the user flow and not the ui design.
 
 # Current scope of the appllication
  - Component interaction
@@ -14,24 +12,17 @@ The app is a working progress.
     - Template Driven forms
     - Reactive forms
  - Http Request Handling
- - Saving recipes to database
+ - Saving recipes to database (firebase)
  - User authentication
  - Protecting routes with Guards
  - Dynamic component
  - Modulization of features
  - Building dynamic components
  - Deploying the app to a server
+ - Using NgRx
     
 # Ongoing upgrades
  - Saving data to the firebase(shopping list)
- - Using NgRx
- 
-# Other upgrades
- - Using Angular univarsal
- - Adding animation to the application
- - Adding offline capabilities to the application
- - Writing unit test for the app
- - Updating the UI with ant-design for angular
 
 ## Run app
  - clone the app
@@ -58,7 +49,7 @@ The app is a working progress.
      - On the popup, select "prpject settings", will see the web API kEY below the first card
 
   - Adding API KEY to connect to datbase
-     - In the "src/auth/auth.service.ts", replace "[API_KEY]" with your API KEY from firebase.
+     - In the "src/environments/environtment.ts" and "src/environments/environtment.prod.ts", replace "[API_KEY]" with your API KEY from firebase.
 
   - Adding database user to connect to datbase and save
-     - In the "src/shared/data-storage.service.ts", replace "PROJECT URL" with your database url from firebase.(remember to keep the /reciepes.json, this is the file firebase writes to)
+     - In the "src/recipes/store.recipes.effect.ts", replace "PROJECT URL" with your database url from firebase.(remember to keep the /reciepes.json, this is the file firebase writes to)
