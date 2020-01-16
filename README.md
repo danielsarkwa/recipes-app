@@ -21,15 +21,14 @@ The app is a working progress.
  - Building dynamic components
  - Deploying the app to a server
  - Modulization of app
- - Using NgRx
+ - Using NgRx (check "using-ngrx" branch)
     
 # Ongoing upgrades
- - Saving data to the firebase(shopping list)
- - Using NgRx (check "using-ngrx" branch)
-
-# Other upgrades
  - Using Angular univarsal
  - Adding animation to the application
+ - Saving data to the firebase(shopping list)
+
+# Other upgrades
  - Adding offline capabilities to the application
  - Writing unit test for the app
  - Updating the UI with ant-design for angular
