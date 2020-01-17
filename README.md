@@ -22,7 +22,6 @@ This app is focused on the architecture of angular using ng-rx and the user flow
  - Using NgRx (check "using-ngrx")
  - Using Angular-Universal
 
-    
 # Ongoing upgrades
  - Saving data to the firebase(shopping list)
 
