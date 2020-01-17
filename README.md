@@ -19,7 +19,9 @@ This app is focused on the architecture of angular using ng-rx and the user flow
  - Modulization of features
  - Building dynamic components
  - Deploying the app to a server
- - Using NgRx
+ - Using NgRx (check "using-ngrx")
+ - Using Angular-Universal
+
     
 # Ongoing upgrades
  - Saving data to the firebase(shopping list)

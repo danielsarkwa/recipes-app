@@ -17,7 +17,7 @@ export class RecipesEffects {
     ),
     switchMap(() => {
       return this.http.get<Recipe[]>(
-        'PROJECT URL/recipes.json',
+        'https://recipes-app-1540b.firebaseio.com/recipes.json',
       );
     }),
     map(recipes => {
@@ -42,7 +42,7 @@ export class RecipesEffects {
     switchMap(([actionData, recipesState]) => {
       return this.http
         .put(
-          'PROJECT URL//recipes.json',
+          'https://recipes-app-1540b.firebaseio.com/recipes.json',
           recipesState.recipes
         );
     })
