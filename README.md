@@ -25,7 +25,6 @@ The app is a working progress.
  - Using Angular Universal (check "using angular-universal" branch)
     
 # Ongoing upgrades
- - Using Angular univarsal
  - Adding animation to the application
  - Saving data to the firebase(shopping list)
 
