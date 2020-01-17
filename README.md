@@ -22,6 +22,7 @@ The app is a working progress.
  - Deploying the app to a server
  - Modulization of app
  - Using NgRx (check "using-ngrx" branch)
+ - Using Angular Universal (check "using angular-universal" branch)
     
 # Ongoing upgrades
  - Using Angular univarsal
